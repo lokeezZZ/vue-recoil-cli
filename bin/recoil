@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+const program = require("commander");
+const {
+    colourful,
+    cliVersion
+} = require("../libs/figlet")
+
+//输出版本号
+program
+    .version(colourful(cliVersion))
+    .usage('<command> [options]')
+    .command('init', 'generate a new project from a template')
+    .command('list', 'list available official templates')
+    // .option('--file','generate a template from json file')
+    .command('create', 'generate a new atom from a template')
+
+program.parse(program.argv); //用来获取关键参数;
+
